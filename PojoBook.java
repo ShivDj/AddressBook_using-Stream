@@ -84,13 +84,14 @@ import java.util.Scanner;
 		public void setEmail(String email) {
 			this.email = email;
 		}
+
 		@Override
 		public String toString() {
-			return "Book [sc=" + sc + ", id=" + id + ", fsname=" + fsname + ", lname=" + lname + ", city=" + city
-					+ ", state=" + state + ", zip_code=" + zip_code + ", phone_no=" + phone_no + ", email=" + email
-					+ "]";
+			return "Book [id=" + id + ", fsname=" + fsname + ", lname=" + lname + ", city=" + city + ", state=" + state
+					+ ", zip_code=" + zip_code + ", phone_no=" + phone_no + ", email=" + email + "]";
 		}
-		 
+		
+		
 	}
 		
 		    public class PojoBook  {

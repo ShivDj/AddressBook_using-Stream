@@ -2,6 +2,7 @@ package AddressBook;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 //import java.util.stream.Collector;
@@ -46,7 +47,7 @@ public class AddressBook{
 			//store.add(new Book(id,fname,null,null,null,null,null,null));
 			store.add(b1);
 			// b1=null;
-			System.out.println(store);
+			System.out.println(store.toString());
 
 		}
 	}
@@ -150,6 +151,16 @@ public class AddressBook{
 
 	}
 	 
+	 void nameSortingOrder() 
+	 {
+		  List<Book> view4= store.stream().sorted(Comparator.comparing(Book :: getFsname)).collect(Collectors.toList());
+          view4.forEach(System.out::println);
+          
+		 
+	 }
+	 
+
+	 
 	 static void end()
      {
          	System.out.println("thank you");
@@ -237,7 +248,9 @@ public class AddressBook{
 			System.out.println("3.updating the addrss book");
 			System.out.println("4.for data removal");
 			System.out.println("5.for doing survey of address book");
-			System.out.println("6.For Exit");
+			System.out.println("6.for search contact in alphabatical order");
+			System.out.println("7.For Exit");
+			
 			System.out.println("choose your option");
 			int userin = sc.nextInt();
 			switch (userin) {
@@ -261,8 +274,12 @@ public class AddressBook{
 			case 5:
 				new AddressBook().contactStream();
 				break;
-
+			
 			case 6:
+				new AddressBook().nameSortingOrder();
+				break; 
+			
+			case 7:
 				end();
 				break;
 
